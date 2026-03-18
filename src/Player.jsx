@@ -22,6 +22,7 @@ export default function Player() {
   );
   const [smoothedCameraTarget] = useState(() => new THREE.Vector3());
 
+  // const restartLvl = useGame((state) => state.restart);
   const start = useGame((state) => state.start);
   const end = useGame((state) => state.end);
   const restart = useGame((state) => state.restart);
@@ -87,6 +88,10 @@ export default function Player() {
     const impulseStrength = 0.6 * delta;
     const torqueStrength = 0.2 * delta;
 
+    // if (resetLvl) {
+    //   // restart();
+    //   console.log("R pressed");
+    // }
     if (forward) {
       impulse.z -= impulseStrength;
       torque.x -= torqueStrength;
